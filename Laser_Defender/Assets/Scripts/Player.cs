@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] int hp = 500;
     [SerializeField] GameObject playerProjectile;
     [SerializeField] float projectileSpeed = 5f;
     [SerializeField] float moveSpeed = 5f;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     float maxX;
     float minY;
     float maxY;
+    Coroutine fireCoroutine;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            StartCoroutine(FireContinuosly());
+            fireCoroutine = StartCoroutine(FireContinuosly());
+        }
+        if(Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(fireCoroutine);
         }
     }
 
@@ -57,5 +63,21 @@ public class Player : MonoBehaviour
         float xRange = Mathf.Clamp(xOffset + transform.position.x, minX, maxX);
         float yRange = Mathf.Clamp(yOffset + transform.position.y, minY, maxY);
         transform.position = new Vector2(xRange, yRange);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DamageDealer dd = collision.GetComponent<DamageDealer>();
+
+        if (dd != null)
+        {
+            hp -= dd.GetDamage();
+            Destroy(collision.gameObject);
+        }
+
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
