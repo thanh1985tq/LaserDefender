@@ -260,6 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74942356f34f3e74680a5143969a9c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionParticles: {fileID: 7602799018889031570, guid: aa193c8ea01f818448135477eab815cd,
+    type: 3}
   enemyProjectile: {fileID: 7868220335036472361, guid: ecc45c8e14975f74da3ad1105a826e7c,
     type: 3}
   projectileSpeed: 3

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] GameObject explosionParticles;
     [SerializeField] GameObject enemyProjectile;
     [SerializeField] float projectileSpeed = 3f;
     [SerializeField] int hp = 100;
@@ -53,6 +54,8 @@ public class Enemy : MonoBehaviour
         if(hp <= 0)
         {
             Destroy(gameObject);
+            GameObject explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity);
+            Destroy(explosion, 1f);
         }
     }
 }
