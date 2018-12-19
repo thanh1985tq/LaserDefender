@@ -23,7 +23,11 @@ public class Enemy : MonoBehaviour
         fireRate = Random.Range(minFireRate, maxFireRate);
 
         //Set position of enemy at the first waypoint
-        transform.position = waypoint[currentWayPoint].position;
+        try
+        {
+            transform.position = waypoint[currentWayPoint].position;
+        }
+        catch { }
     }
 
     // Update is called once per frame
@@ -35,18 +39,24 @@ public class Enemy : MonoBehaviour
 
     private void Move(List<Transform> waypoint)
     {
-        int wpCount = waypoint.Count;
-        if(currentWayPoint < wpCount) { 
-            Vector3 target = waypoint[currentWayPoint].transform.position;
-            transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-            if(transform.position == target)
-            {
-                currentWayPoint++;
-            }
-        }else
+        try
         {
-            Destroy(gameObject);
+            int wpCount = waypoint.Count;
+            if (currentWayPoint < wpCount)
+            {
+                Vector3 target = waypoint[currentWayPoint].transform.position;
+                transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+                if (transform.position == target)
+                {
+                    currentWayPoint++;
+                }
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
+        catch { }
     }
 
     private void Fire()
@@ -80,5 +90,10 @@ public class Enemy : MonoBehaviour
             GameObject explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity);
             Destroy(explosion, 1f);
         }
+    }
+
+    public void SetWayPoint(List<Transform> wp)
+    {
+        this.waypoint = wp;
     }
 }
