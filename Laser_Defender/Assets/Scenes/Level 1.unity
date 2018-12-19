@@ -260,14 +260,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74942356f34f3e74680a5143969a9c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypoint:
+  - {fileID: 609259208}
+  - {fileID: 609259207}
+  - {fileID: 609259206}
+  moveSpeed: 3
   explosionParticles: {fileID: 7602799018889031570, guid: aa193c8ea01f818448135477eab815cd,
     type: 3}
   enemyProjectile: {fileID: 7868220335036472361, guid: ecc45c8e14975f74da3ad1105a826e7c,
     type: 3}
   projectileSpeed: 3
   hp: 100
-  minFireRate: 2
-  maxFireRate: 5
+  minFireRate: 0.5
+  maxFireRate: 3
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +355,93 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &609259205
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2110011745141800678, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_Name
+      value: Zikzak
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110011745141800679, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59ba346643a280c4e9c746cafe5dcf3c, type: 3}
+--- !u!4 &609259206 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2110011744172557117, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 609259205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &609259207 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2110011744521188392, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 609259205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &609259208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2110011746031793430, guid: 59ba346643a280c4e9c746cafe5dcf3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 609259205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1101134323
 GameObject:
   m_ObjectHideFlags: 0
