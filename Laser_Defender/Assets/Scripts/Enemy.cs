@@ -46,6 +46,11 @@ public class Enemy : MonoBehaviour
             {
                 Vector3 target = waypoint[currentWayPoint].transform.position;
                 transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+
+                //Rotation to waypoint
+                float angle = Mathf.Atan2(transform.position.y - target.y, transform.position.x - target.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+
                 if (transform.position == target)
                 {
                     currentWayPoint++;
