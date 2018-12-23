@@ -5,15 +5,19 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Wave Configuration")]
 public class WaveConfig : ScriptableObject
 {
+    [Header("Enemy Config")]
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] int enemyCount = 3;
-    [SerializeField] bool isSyncApear = false;
-    [SerializeField] float spawnTime = 2f;
-    [SerializeField] GameObject enemyPath;
-    [SerializeField] float moveSpeed = 3f;
     [SerializeField] int hp = 100;
     [SerializeField] float minFireRate = 2f;
     [SerializeField] float maxFireRate = 5f;
+    [SerializeField] GameObject enemyPath;
+    [SerializeField] float moveSpeed = 3f;
+
+    [Header("Wave Config")]
+    [Tooltip("0 = move follow waypoint, 1 = random between one point, 2 = spread from multiple point")]
+    [SerializeField] int apearType = 0; //0 = move follow waypoint, 1 = random between 1 point, 2 = spread from multiple point
+    [SerializeField] int enemyCount = 3;
+    [SerializeField] float spawnTime = 2f;
 
     public GameObject GetEnemy()
     {
@@ -25,9 +29,8 @@ public class WaveConfig : ScriptableObject
         return enemyCount;
     }
 
-    public bool IsSyncApear()
-    {
-        return isSyncApear;
+    public int GetApearType(){
+        return apearType;
     }
 
     public float GetSpawnTime()

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d63a2b39407bcb4ea3607339cd091ab, type: 3}
   m_Name: Zik zak
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8030434092611653155, guid: 563246c28e80d9944aa78b1df8dd161c,
+  enemyPrefab: {fileID: 8030434092611653155, guid: 4145a9bc8ff89f94cbb05cb1d187a1b1,
     type: 3}
-  enemyCount: 3
+  enemyCount: 6
   isSyncApear: 0
+  spawnTime: 2
   enemyPath: {fileID: 2110011745141800678, guid: 59ba346643a280c4e9c746cafe5dcf3c,
     type: 3}
   moveSpeed: 3
