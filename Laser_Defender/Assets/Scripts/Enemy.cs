@@ -101,4 +101,13 @@ public class Enemy : MonoBehaviour
     {
         this.waypoint = wp;
     }
+
+    public void SetEnemyParams(int hp, float minFireRate, float maxFireRate, List<Transform> wp, float moveSpeed)
+    {
+        this.hp = hp;
+        this.minFireRate = minFireRate;
+        this.maxFireRate = maxFireRate;
+        this.waypoint = wp;
+        this.moveSpeed = moveSpeed;
+    }
 }

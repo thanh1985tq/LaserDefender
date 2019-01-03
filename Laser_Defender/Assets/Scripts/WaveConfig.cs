@@ -60,6 +60,16 @@ public class WaveConfig : ScriptableObject
         return hp;
     }
 
+    public float GetMinFireRate()
+    {
+        return minFireRate;
+    }
+
+    public float GetMaxFireRate()
+    {
+        return maxFireRate;
+    }
+
     public float GetFireRate()
     {
         return Random.Range(minFireRate, maxFireRate);

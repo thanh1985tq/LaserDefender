@@ -6,33 +6,37 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] List<WaveConfig> waveConfig;
+    [SerializeField] float waveDelay = 20f;
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
         //DEBUG
-        WaveConfig wave1 = waveConfig[0];
-        
+        //WaveConfig wave1 = waveConfig[0];
 
-        StartCoroutine(SpawnAllEnemiesInWave(wave1));
+        for (int i = 0; i < waveConfig.Count; i++)
+        {
+            StartCoroutine(SpawnAllEnemiesInWave(waveConfig[i]));
+            yield return new WaitForSeconds(waveDelay);
+        }
     }
 
-    private IEnumerator SpawnAllEnemiesInWave(WaveConfig wave1)
+    private IEnumerator SpawnAllEnemiesInWave(WaveConfig wc)
     {
-        GameObject enemyPrefab = wave1.GetEnemy();
-        enemyPrefab.GetComponent<Enemy>().SetWayPoint(wave1.GetWayPoint());
-        for (int i = 0; i < wave1.GetEnemyCount(); i++)
+        GameObject enemyPrefab = wc.GetEnemy();
+
+        enemyPrefab.GetComponent<Enemy>()
+            .SetEnemyParams(wc.GetHP(), wc.GetMinFireRate(), wc.GetMaxFireRate(), wc.GetWayPoint(), wc.GetMoveSpeed());
+        for (int i = 0; i < wc.GetEnemyCount(); i++)
         {
             GameObject enemy = Instantiate(enemyPrefab, enemyPrefab.transform.position, Quaternion.identity);
-            //enemy.GetComponent<Enemy>().SetWayPoint(wave1.GetWayPoint());
 
-            yield return new WaitForSeconds(wave1.GetSpawnTime());
+            yield return new WaitForSeconds(wc.GetSpawnTime());
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

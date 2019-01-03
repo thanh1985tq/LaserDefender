@@ -640,6 +640,8 @@ MonoBehaviour:
   waveConfig:
   - {fileID: 11400000, guid: 5106d565e2b61d942a4d2ab2fa787e90, type: 2}
   - {fileID: 11400000, guid: 51cc1b6a5834ad746959413592a81763, type: 2}
+  - {fileID: 11400000, guid: fde6dec787887384b8331f9a040549cf, type: 2}
+  waveDelay: 2
 --- !u!1001 &1642055659595545574
 PrefabInstance:
   m_ObjectHideFlags: 0
